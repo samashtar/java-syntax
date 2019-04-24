@@ -45,7 +45,7 @@ public class Animal {
 
     // scanner = to take user input
     // system.in means you are taking data from the keyboard
-    static Scanner userinput = new Scanner(System.in);
+    static Scanner userInput = new Scanner(System.in);
 
     // constructor
     public Animal() {
@@ -56,6 +56,114 @@ public class Animal {
         // print
         System.out.println("5+1=" + sumOfNumbers);
 
+        System.out.print("Enter the name: \n");
+
+        /*
+         * other data types that return true if it is receiving it - used to check the
+         * data type // hasNextLine = string// hasNextInt = integer //hasNextFloat =
+         * float // hasNextDouble = Double // hasNextBoolean = Boolean // hasNextByte =
+         * byte
+         */
+
+        // if user typed out a string
+        if (userInput.hasNextLine()) {
+            // hasnextLine = makes sure its the right data
+
+            // nextLine = gets data that was entered
+            this.setName(userInput.nextLine());
+
+        }
+
+        // using a setter
+        this.setFavoriteColor();
+        this.setUniqueID();
+
+    }
+
+    // setters and getters
+
+    // public = accessible everywhere
+    public String getName() {
+        return name;
+    }
+
+    // void = doesnt return anything
+    public void setName(String name){
+        this.name = name
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(byte age) {
+        this.age = age;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public String getFavoriteChar() {
+        return favoriteChar;
+    }
+
+    public void setFavoriteChar(char favoriteChar) {
+        this.favoriteChar = favoriteChar;
+    }
+
+    public String getHasOwner() {
+        return hasOwner;
+    }
+
+    public void setHasOwner(boolean hasOwner) {
+        this.hasOwner = hasOwner;
+    }
+
+    public String getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
+    public String getUniqueID() {
+        return uniqueID;
+    }
+
+    // you can create 2 versions of the same function to pass in different argument
+    // types
+    public void setUniqueID(long uniqueID) {
+        this.uniqueID = uniqueID;
+        System.out.println("Unique ID set to:" + this.uniqueID);
+    }
+
+    public void setUniqueID() {
+        long minNumber = 1;
+        long maxNumber = 1000000;
+
+        // math.random returns a double, here we are telling it to return a long instead
+        // this generates a random number from 1 to 1million
+        this.uniqueID = minNumber + (long) (Math.random() * ((maxNumber - minNumber) + 1));
+
+        //conversions of primitive datatypes
+
+        //long to string
+
+        String stringNumber = Long.toString(maxNumber)
     }
 
     public static void main(String[] args) {
